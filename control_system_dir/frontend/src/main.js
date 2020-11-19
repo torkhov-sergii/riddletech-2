@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import App from './App.vue'
-import store from './store'
-import router from './router'
+import store from '@/store'
+import router from "@/router";
 import apolloProvider from './vue-apollo'
-import vuetify from './plugins/vuetify'
+import Vuetify from 'vuetify';
+Vue.use(Vuetify);
 
 // Requests to our Laravel back-end
 window.axios = require('axios');
@@ -21,7 +22,7 @@ Vue.config.productionTip = false
 new Vue({
   store,
   router,
-  apolloProvider: apolloProvider,
-  vuetify,
+  vuetify : new Vuetify(),
+  apolloProvider,
   render: h => h(App)
 }).$mount('#app')
